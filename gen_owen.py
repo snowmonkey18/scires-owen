@@ -5,8 +5,8 @@ import csv
 h_dim = 631
 a_dim = 101
 
-h_list = np.linspace(0,6.3,h_dim).tolist()
-a_list = np.linspace(0,1,a_dim).tolist()
+h_list = np.linspace(0.,6.3,h_dim).tolist()
+a_list = np.linspace(0.,1.,a_dim).tolist()
 
 data_owen = []
 

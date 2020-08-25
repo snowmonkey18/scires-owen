@@ -1,10 +1,11 @@
-import chart_studio.plotly as py
-import plotly.graph_objs as go
 import numpy as np
+from scipy import special
+import plotly.graph_objs as go
+import plotly
 
 # Creating the data
-x = np.linspace(-6.3,6.3,63)
-y = np.linspace(-10,10,50)
+x = np.linspace(0,6.3,631)
+y = np.linspace(0,1,101)
 xGrid, yGrid = np.meshgrid(x,y)
 z = special.owens_t(xGrid,yGrid)
 
@@ -40,4 +41,3 @@ layout = go.Layout(
 )
 fig = go.Figure(data=lines, layout=layout)
 plotly.offline.iplot(fig)
-#py.iplot(fig, filename='wireframe_plot')
