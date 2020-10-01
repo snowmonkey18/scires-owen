@@ -19,6 +19,6 @@ for i in range(h_dim):
         T = integrate.quad(f,0,a)[0]
         data_quad.append([h,a,T])
 
-with open("data_quad.csv", "w", newline="") as f:
+with open("data_quad_all.csv", "w", newline="") as f:
     writer = csv.writer(f)
     writer.writerows(data_quad)

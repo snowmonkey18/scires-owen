@@ -7,14 +7,13 @@ knots = 3 # number of knots
 h_index = 50 # which fixed h
 
 h_range = np.linspace(0.,6.3,n) # different fixed h
+h_value = h_range[h_index] 
 
-h_train = h_range[h_index]
 a_train = np.linspace(0,1,knots)
-T_train = special.owens_t(h_train,a_train)
+T_train = special.owens_t(h_value,a_train)
 
-h_all = h_range[h_index]
 a_all = np.linspace(0.,1.,1001)
-T_all = special.owens_t(h_all,a_all)
+T_all = special.owens_t(h_value,a_all)
 
 cs = interpolate.CubicSpline(a_train,T_train)
 

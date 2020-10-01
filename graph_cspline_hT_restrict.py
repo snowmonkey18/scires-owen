@@ -1,20 +1,20 @@
-import numpy as np
+import math
 from scipy import special, interpolate
+import numpy as np
 import matplotlib.pyplot as plt
 
 n = 101 # density of a_range
-knots = 10 # number of knots
+knots = 11 # number of knots
 a_index = 100 # which fixed a
 
 a_range = np.linspace(0.,1.,n) # different fixed a
+a_value = a_range[a_index]
 
-h_train = np.linspace(0.,6.3,knots)
-a_train = a_range[a_index]
-T_train = special.owens_t(h_train,a_train)
+h_train = np.linspace(-6.3,6.3,knots)
+T_train = special.owens_t(h_train,a_value)
 
-h_all = np.linspace(0.,6.3,6301)
-a_all = a_range[a_index]
-T_all = special.owens_t(h_all,a_all)
+h_all = np.linspace(-6.3,6.3,6301)
+T_all = special.owens_t(h_all,a_value)
 
 cs = interpolate.CubicSpline(h_train,T_train)
 
